@@ -32,12 +32,21 @@
         </thead>
         <tbody>
           <tr *ngFor='let product of filteredProducts'>
-            <td><img *ngIf='showImages' [src]='product.imageUrl' [style.width.px]="imageWidth" [style.margin.px]="imageMargin" /></td>
+            <td>
+              <img *ngIf='showImages'
+                   [src]='product.imageUrl'
+                   [style.width.px]="imageWidth" 
+                   [style.margin.px]="imageMargin" />
+            </td>
             <td>{{product.productName}}</td>
             <td>{{product.productCode}}</td>
             <td>{{product.releaseDate}}</td>
             <td>{{product.price | currency:'USD':'symbol':'1.2-2'}}</td>
-            <td>{{product.starRating}}</td>
+            <td>
+              <app-star [rating]='product.starRating'
+                        (ratingClicked)='onNotify($event)'>
+              </app-star>
+            </td>
           </tr>
         </tbody>
       </table>
