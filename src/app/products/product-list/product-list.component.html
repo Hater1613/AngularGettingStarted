@@ -38,7 +38,9 @@
                    [style.width.px]="imageWidth" 
                    [style.margin.px]="imageMargin" />
             </td>
-            <td>{{product.productName}}</td>
+            <td>
+              <span (click)='navigateProductDetail(product.productId)' class="product-detail-link">{{product.productName}}</span>
+            </td>
             <td>{{product.productCode}}</td>
             <td>{{product.releaseDate}}</td>
             <td>{{product.price | currency:'USD':'symbol':'1.2-2'}}</td>

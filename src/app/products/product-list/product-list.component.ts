@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from 'src/app/interfaces/product.model';
 import { ProductService } from 'src/app/services/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -9,7 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
   providers: [ProductService]
 })
 export class ProductListComponent implements OnInit {
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private router: Router) {}
 
   showImages: boolean = true;
   imageWidth: number = 80;
@@ -47,5 +48,9 @@ export class ProductListComponent implements OnInit {
 
   onNotify(message: string) {
     alert(message);
+  }
+
+  navigateProductDetail(id: number) {
+    this.router.navigate(['products', id]);
   }
 }

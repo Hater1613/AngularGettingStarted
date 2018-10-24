@@ -1,23 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { ProductListComponent } from './products/product-list/product-list.component';
-import { StarComponent } from './shared/star/star.component';
-import { from } from 'rxjs';
+import { WelcomeComponent } from './home/welcome/welcome.component';
+import { ProductModule } from './products/product.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductListComponent,
-    StarComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ProductModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

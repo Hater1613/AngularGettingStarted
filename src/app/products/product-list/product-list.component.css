@@ -1,3 +1,9 @@
 thead {
     color: #337AB7;
-  }
+}
+.product-detail-link {
+  color: #337AB7;
+}
+.product-detail-link:hover {
+  cursor: pointer;
+}
